@@ -1,18 +1,18 @@
 {
   "name": "Node-API-BaltaIO",
   "version": "1.0.0",
-  "description": "",
+  "description": "Node API made in the Balta.io course",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GhostDovahkiin/Node-API-BaltaIO.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Pedro Henrique -> Github @ghostdovahkiin",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/GhostDovahkiin/Node-API-BaltaIO/issues"
   },
@@ -21,5 +21,8 @@
     "debug": "^4.1.1",
     "express": "^4.17.1",
     "http": "0.0.1-security"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
