@@ -51,8 +51,6 @@ exports.getByTag = (req, res, next) => {
     });
 }
 
-
-
 exports.post = (req, res, next) => {
   var product = new Product(req.body);
   product
@@ -70,11 +68,23 @@ exports.post = (req, res, next) => {
 
 
 exports.put = (req, res, next) => {
-  const id = req.params.id;
-  res.status(20).send({
-    id: id,
-    item: req.body
-  });
+  Product
+    .findByIdAndUpdate(req.params.id, {
+      $set: {
+        title: req.body.title,
+        description: req.body.description,
+        price: req.body.price
+      }
+    }).then(x => {
+      res.status(201).send({
+        message: "Produto atualizado com sucesso!"
+      });
+    }).catch(e => {
+      res.status(400).send({
+        message: "Falha ao atualizar o produto.",
+        data: e
+      });
+    });
 }
 
 exports.delete = (req, res, next) => {
