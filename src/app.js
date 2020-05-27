@@ -18,6 +18,7 @@ mongoose.connect('mongodb+srv://hearthfire:thesims2@clusterpicudo-s9otl.gcp.mong
 // carrega os models
 const Customer = require('./models/customer');
 const Product = require('./models/products');
+const Order = require('./models/order');
 
 // Carrega rotas
 const indexRoute = require('./routes/indexRoute');
