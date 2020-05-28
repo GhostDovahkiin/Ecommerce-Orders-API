@@ -2,10 +2,6 @@
 
 > API Simples desenvolvida utilizando Node.JS, Express e MongoDB. Futuramente será implementado a autenticação, arquivo de configuração e validador de erros. 
 
-# Back End - Tecnologias Utilizadas
-
-A API inicial do Housin está rodando em Java (Framework Spring) e utilizando JPA (Java Persistence API) e Hibernate ORM para a persistência de dados. O banco de dados utilizado é o PostgreSQL e o versionador é o FlywayDB.
-
 # Como Executar
 
  1. Tenha a última versão do Node.js instalada.
