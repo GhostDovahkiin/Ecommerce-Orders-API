@@ -24,6 +24,7 @@ const Order = require('./models/order');
 const indexRoute = require('./routes/indexRoute');
 const productRoute = require('./routes/productRoute');
 const customerRoute = require('./routes/customerRoute');
+const orderRoute = require('./routes/orderRoute');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -31,6 +32,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use("/", indexRoute);
+app.use("/orders", orderRoute);
 app.use("/products", productRoute);
 app.use("/customers", customerRoute);
 
