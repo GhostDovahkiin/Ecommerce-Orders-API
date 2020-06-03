@@ -2,6 +2,7 @@
 
 const ValidationContract = require('../validators/fluent-validators');
 const repository = require('../repository/customer-repository');
+const md5 = require('md5');
 
 exports.post = async (req, res, next) => {
   /*let contract = new ValidationContract();
@@ -15,7 +16,11 @@ exports.post = async (req, res, next) => {
   }
   */
   try {
-    await repository.create(req.body)
+    await repository.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: md5(req.body.password + global.SALT_KEY)
+    });
     res.status(201).send({
       message: 'Cliente cadastrado com sucesso!'
     });
