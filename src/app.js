@@ -3,12 +3,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const config = require('./config');
 
 const app = express();
 const router = express.Router();
 
 // conecta ao banco
-mongoose.connect('mongodb+srv://hearthfire:thesims2@clusterpicudo-s9otl.gcp.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect(config.connectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
