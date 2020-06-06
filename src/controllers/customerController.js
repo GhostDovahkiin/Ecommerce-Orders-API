@@ -23,11 +23,15 @@ exports.post = async (req, res, next) => {
       password: md5(req.body.password + global.SALT_KEY)
     });
     emailService.send(
-      req.body.email,
-      global.EMAIL_TMPL.replace('{0}',
-        req.body.name),
-      'Cadastro efetivado na DRACO Imports',
-    );
+        req.body.email,
+        "Cadastro concluído na DRACO Imports",
+        global.EMAIL_TMPL.replace('{0}', req.body.name))
+      .then(() => {
+        console.log('Email enviado para ' + req.body.email)
+      }).catch((error) => {
+        console.log(error.response.body)
+        // console.log(error.response.body.errors[0].message)
+      });
     res.status(201).send({
       message: 'Cliente cadastrado com sucesso!'
     });
