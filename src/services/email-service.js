@@ -1,8 +1,8 @@
 'use strict';
-
+require('dotenv').config();
 var config = require('../config');
 var sgmail = require('@sendgrid/mail');
-sgmail.setApiKey(config.sendGridKey);
+sgmail.setApiKey(process.env.SENDGRID_KEY);
 
 exports.send = async (to, subject, body) => {
   sgmail.send({

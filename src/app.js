@@ -3,13 +3,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const config = require('./config');
-
+require('dotenv').config();
 const app = express();
 const router = express.Router();
 
 // conecta ao banco
-mongoose.connect(config.connectionString, {
+mongoose.connect(process.env.MONGO_STRING, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
