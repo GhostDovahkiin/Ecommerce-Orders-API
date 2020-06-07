@@ -1,6 +1,6 @@
 # Ecommerce Orders API
 
-> API Simples desenvolvida utilizando Node.JS, Express e MongoDB. Futuramente será implementado a autenticação, arquivo de configuração e validador de erros. 
+> API Simples desenvolvida utilizando Node.JS, Express, MongoDB, Sendgrid como serviço de emails e Azure Storage Explorer para armazenamento de mídia. Futuramente será implementado a autenticação e deploy da API.
 
 # Como Executar
 
