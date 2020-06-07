@@ -51,16 +51,6 @@ exports.getByTag = async (req, res, next) => {
 }
 
 exports.post = async (req, res, next) => {
-  let contract = new ValidationContract();
-  contract.hasMinLen(req.body.title, 3, 'O título deve conter pelo menos 3 caracteres');
-  contract.hasMinLen(req.body.slug, 3, 'O slug deve conter pelo menos 3 caracteres');
-  contract.hasMinLen(req.body.description, 10, 'A descrição deve conter pelo menos 10 caracteres');
-
-  if (contract.isValid()) {
-    res.status(400).send(contract.errors()).end();
-    return;
-  }
-
   try {
     const blobSvc = azure.createBlobService(process.env.AZURE_KEY);
 
